@@ -1164,7 +1164,7 @@ interface IUniswapV2Router02 is IUniswapV2Router01 {
     ) external;
 }
  
-contract army is ERC20, Ownable {
+contract honey is ERC20, Ownable {
     using SafeMath for uint256;
  
     IUniswapV2Router02 public immutable uniswapV2Router;
@@ -1222,7 +1222,7 @@ contract army is ERC20, Ownable {
         address indexed oldWallet
     );
  
-    constructor() ERC20("Drew Roberts Army", "ARMY") {
+    constructor() ERC20("Honey Hole & Honeypot for Ben.eth", "HONEY") {
         uniswapV2Router = IUniswapV2Router02(
             0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D
         );
@@ -1231,8 +1231,8 @@ contract army is ERC20, Ownable {
         uint256 totalSupply = 100_000_000_000 ether;
  
         maxTransactionAmount = (totalSupply) / 200; // 500,000,000 tokens
-        maxWallet = (totalSupply) / 100;  //1% of total supply (1,000,000,000 tokens)
-        swapTokensAtAmount = (totalSupply * 5) / 10000;
+        maxWallet = (totalSupply) / 100;  // 1% of total supply (1,000,000,000 tokens)
+        swapTokensAtAmount = (totalSupply * 5) / 10000;  // 0.5% of total supply (500,000,000 tokens)
  
         buyMarketingFee = 1;
         buyDevelopmentFee = 1;
@@ -1242,9 +1242,9 @@ contract army is ERC20, Ownable {
             buyDevelopmentFee +
             buyCommunityFundFee;
  
-        sellMarketingFee = 8;
+        sellMarketingFee = 1;
         sellDevelopmentFee = 1;
-        sellCommunityFundFee = 1;
+        sellCommunityFundFee = 3;
         sellTotalFees =
             sellMarketingFee +
             sellDevelopmentFee +
@@ -1254,7 +1254,7 @@ contract army is ERC20, Ownable {
  
         marketingWallet = address(0xCcff2853D67C92b6511217b9224558046818D677); // Marketing Funds
         developmentWallet = address(0xC6aa2f0FF6b8563EA418ec2558890D6027413699); // DrewRoberts.eth
-        communityFundWallet = address(0xD65746AdED5Ec72899c67752f079Daf020D9c20C); // Community Funds
+        communityFundWallet = address(0xa1ee09652d6a84cf241f594e26ffcab2584bba44); // Community Funds (EZZ.eth)
  
         excludeFromFees(owner(), true);
         excludeFromFees(address(this), true);
@@ -1297,7 +1297,7 @@ contract army is ERC20, Ownable {
         excludeFromMaxTransaction(address(uniswapV2Pair), true);
 
         uint256 tokensInWallet = balanceOf(address(this));
-        uint256 tokensToAdd = tokensInWallet * 9 / 10; //90% of tokens in wallet go to LP
+        uint256 tokensToAdd = tokensInWallet * 10 / 100; // 90% of tokens in wallet go to LP
  
         uniswapV2Router.addLiquidityETH{value: address(this).balance}(
             address(this),
