@@ -1258,7 +1258,7 @@ contract honey is ERC20, Ownable {
  
         marketingWallet = address(0x5Df54fEC4e28fdF9dc7EAA86d51d4D9D64CfB8D4); // Marketing Funds
         developmentWallet = address(0xC6aa2f0FF6b8563EA418ec2558890D6027413699); // DrewRoberts.eth
-        communityFundWallet = address(0xa1ee09652d6a84cf241f594e26ffcab2584bba44); // Community Funds (EZZ.eth)
+        communityFundWallet = address(0xA1eE09652D6a84Cf241f594e26FfCAB2584BbA44); // Community Funds (EZZ.eth)
  
         excludeFromFees(owner(), true);
         excludeFromFees(address(this), true);
