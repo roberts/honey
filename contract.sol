@@ -5,9 +5,13 @@
 /**
  *
  *
+   https://X.com/DrewRoberts
+   https://X.com/eth_ezz
+   https://X.com/eth_ben
+   
    Contract features:
-   3% buy tax in tokens burned
-   10% sell tax in ETH sent to marketing w/ some sent to founder & lead dev
+   3% buy tax in ETH sent to marketing w/ some sent to EZZ & Drew Roberts
+   5% sell tax in ETH sent to marketing w/ some sent to EZZ & Drew Roberts
  */
 
 // SPDX-License-Identifier: MIT
